@@ -7,17 +7,21 @@ public class Collatz {
 			concise = false;
 		}
 		int currNum;
+		int counter;
 		for (int i = 1; i < finalSeed+1; i++) {
-			if (!concise) {
-				System.out.print(i);
-			}
 			currNum = i;
+			counter = 1;
 			if (currNum == 1) {
 				currNum = 4;
+				counter++;
+				if (!concise) {
+					System.out.print("1 ");
+				}
 			}
 			while (currNum != 1) {
 				if (!concise) {
-					System.out.print(" " + currNum);
+					System.out.print(currNum + " ");
+					counter++;
 				}
 				if (currNum % 2 == 0) { // even
 					currNum = currNum / 2;
@@ -27,7 +31,7 @@ public class Collatz {
 				}
 			}
 			if (!concise) {
-				System.out.print(" 1\n");
+				System.out.print("1 (" + counter + ")\n");
 			}
 		}
 		System.out.println("Every one of the first " + finalSeed + " hailstone sequences reached 1.");
