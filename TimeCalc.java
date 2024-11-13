@@ -11,11 +11,15 @@ public class TimeCalc {
         if (futurehours >= 24) {
             futurehours -= 24;
         }
-        String zero = "";
+        String zeroh = "";
         if (futurehours < 10) {
-            zero = "0";
+            zeroh = "0";
         }
-        System.out.println(zero + futurehours + ":" + futuremins);
+        String zerom = "";
+        if (futuremins < 10) {
+            zerom = "0";
+        }
+        System.out.println(zeroh + futurehours + ":" + zerom + futuremins);
 
     }
 }
