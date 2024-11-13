@@ -8,7 +8,7 @@ public class TimeCalc {
         int totalmins = hours*60 + minutes + minutestoadd;
         int futuremins = totalmins % 60;
         int futurehours = (totalmins-futuremins) / 60;
-        if (futurehours >= 24) {
+        while (futurehours >= 24) {
             futurehours -= 24;
         }
         String zeroh = "";
